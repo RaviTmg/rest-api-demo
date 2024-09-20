@@ -11,6 +11,12 @@ export default function Posts() {
             .then((data) => {
                 console.log(data);
                 setPosts(data);
+            })
+            .catch(e => {
+                alert("Some error occured");
+            })
+            .finally(() => {
+                console.log("data fetched. It either succeeded or failed");
             });
     }, []);
 
