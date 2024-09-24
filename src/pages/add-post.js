@@ -1,4 +1,5 @@
 import { useState } from "react";
+import TextInput from "./components/text-input";
 
 
 export function AddPost({ onSubmit }) {
@@ -15,30 +16,36 @@ export function AddPost({ onSubmit }) {
         });
     }
     return (
-        <form onSubmit={handleSubmit}>
+        <form 
+            onSubmit={handleSubmit}
+            className="flex flex-col items-start"
+        >
             <label>
                 Title:
-                <input
+                <TextInput
                     value={title}
                     onChange={e => setTitle(e.target.value)}
                 />
             </label>
             <label>
                 Body:
-                <input
+                <TextInput
                     value={body}
                     onChange={e => setBody(e.target.value)}
                 />
             </label>
             <label>
                 User Id:
-                <input
+                <TextInput
                     type="number"
                     value={userId}
                     onChange={e => setUserId(e.target.value)}
                 />
             </label>
-            <button type="submit">Add Post</button>
+            <button
+                className="px-2 py-0.5 rounded-md bg-blue-700 text-white hover:bg-blue-900"
+                type="submit"
+            >Add Post</button>
         </form>
     );
 }

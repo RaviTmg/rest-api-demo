@@ -28,8 +28,8 @@ export default function Posts() {
     };
 
     return (
-        <div>
-            <h1>
+        <div className="py-4 px-10">
+            <h1 className="text-4xl text-blue-950 font-extrabold mb-6 underline">
                 Today's Posts
             </h1>
             <AddPost
